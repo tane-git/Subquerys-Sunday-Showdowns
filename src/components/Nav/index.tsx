@@ -12,6 +12,10 @@ import styles from './styles/style.module.less';
 import logo from './images/logo.svg';
 import logIn from './images/logIn.svg';
 
+// can i console log styles to see how to access ant-layout-header?
+console.log('styles: ', styles)
+console.log('styles.ant-layout-header: ', styles.antLayoutHeader)
+
 // Navigation Bar
 export const Nav: React.FC = () => {
   const [current, setCurrent] = useState('mail');
@@ -32,9 +36,25 @@ export const Nav: React.FC = () => {
   // Refactor to require links to be passed to component?
 
   return (
-    // <div className={styles.test} >
-    // <Header className='ant-layout-header' >
-    <Header className='test' >
+    // NOTES: Different ways to override AntD styles:
+
+    // Overriding AntD style with new class
+    // <Header className={styles.test}>
+
+    // Overriding AntD class
+    // <Header className={styles['ant-layout-header']} >
+
+    // Overriding AntD style with TailwindCSS
+    // <Header className='bg-pink-500'>
+
+    // Overiding AntD style with global CSS
+    // <Header className='test'>
+
+    // Modifying AntD variable
+    // <Header >
+
+    // CODE:
+    <Header >
       <Row>
         <Col span={6}>
         {/* <Col span={6} className='bg-red-400 items-end custom'> */}
