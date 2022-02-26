@@ -6,12 +6,13 @@ import logo from './logo.svg'
 // antd
 import 'antd/dist/antd.less'
 import { Layout } from 'antd'
+const { Header, Content, Footer } = Layout 
 
 // App.css can override antd styles when imported below 
 import './App.css'
 
 // internal components
-import { Nav } from './components' 
+import { Nav, RadioGroup } from './components' 
 
 
 function App() {
@@ -19,7 +20,11 @@ function App() {
 
   return (
     <Layout >
-      <Nav />
+      <Nav links={['Home', 'About', 'Register']} />
+      <Content >
+        <RadioGroup />
+
+      </Content>
     </Layout>
   )
 }

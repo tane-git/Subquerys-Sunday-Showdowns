@@ -12,28 +12,24 @@ import styles from './styles/style.module.less';
 import logo from './images/logo.svg';
 import logIn from './images/logIn.svg';
 
-// can i console log styles to see how to access ant-layout-header?
-console.log('styles: ', styles)
-console.log('styles.ant-layout-header: ', styles.antLayoutHeader)
-
 // Navigation Bar
-export const Nav: React.FC = () => {
+export const Nav: React.FC<string[]> = (links) => {
   const [current, setCurrent] = useState('mail');
 
   const handleClick = (e: any) => {
     setCurrent(e.key);
   };
 
-  // Configure the links the menu will display:
-  const links: string[] = [
-    'Home',
-    'Explorer',
-    'Projects',
-    'Grants',
-    'Documentation',
-    'GitHub'
-  ]
-  // Refactor to require links to be passed to component?
+  // // Configure the links the menu will display:
+  // const links: string[] = [
+  //   'Home',
+  //   'Explorer',
+  //   'Projects',
+  //   'Grants',
+  //   'Documentation',
+  //   'GitHub'
+  // ]
+  // // Refactor to require links to be passed to component?
 
   return (
     // NOTES: Different ways to override AntD styles:
@@ -55,7 +51,7 @@ export const Nav: React.FC = () => {
 
     // CODE:
     <Header >
-      <Row>
+      <Row justify="space-around" align="middle">
         <Col span={6}>
         {/* <Col span={6} className='bg-red-400 items-end custom'> */}
           <img src={logo} alt="logo" />
@@ -64,6 +60,7 @@ export const Nav: React.FC = () => {
         <Col span={12}>
           <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" >
             {links.map((link: string) => (
+            // {links.map((link: string) => (
               <Menu.Item key={link}>
                 {link}
               </Menu.Item>
