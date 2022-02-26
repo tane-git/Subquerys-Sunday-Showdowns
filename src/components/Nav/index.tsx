@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 // antd
+import { Layout } from 'antd';
+const { Header, Content, Footer } = Layout;
 import { Col, Menu, Row } from 'antd';
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 // const { SubMenu } = Menu;
@@ -30,7 +32,8 @@ export const Nav: React.FC = () => {
   // Refactor to require links to be passed to component?
 
   return (
-    <div className={styles.test} >
+    // <div className={styles.test} >
+    <Header >
       <Row>
         <Col span={6}>
         {/* <Col span={6} className='bg-red-400 items-end custom'> */}
@@ -51,6 +54,6 @@ export const Nav: React.FC = () => {
           <img src={logIn} alt="logIn" />
         </Col>
       </Row>
-    </div>
+    </Header>
   );
 }
