@@ -5,12 +5,16 @@ import './App.css'
 // antd
 import { Layout } from 'antd'
 
+// internal components
+import { Nav } from './components' 
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <Layout >
+      <Nav />
     </Layout>
   )
 }

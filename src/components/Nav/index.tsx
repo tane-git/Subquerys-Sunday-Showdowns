@@ -9,8 +9,8 @@ import { Col, Menu, Row } from 'antd';
 
 // internal
 import styles from './styles/style.module.less';
-import logo from './img/logo.svg';
-import logIn from './img/logIn.svg';
+import logo from './images/logo.svg';
+import logIn from './images/logIn.svg';
 
 // Navigation Bar
 export const Nav: React.FC = () => {
