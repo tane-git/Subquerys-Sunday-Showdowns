@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 
 // antd
+import 'antd/dist/antd.less'
 import { Layout } from 'antd'
 
 // internal components
