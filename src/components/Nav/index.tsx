@@ -33,7 +33,8 @@ export const Nav: React.FC = () => {
 
   return (
     // <div className={styles.test} >
-    <Header >
+    // <Header className='ant-layout-header' >
+    <Header className='test' >
       <Row>
         <Col span={6}>
         {/* <Col span={6} className='bg-red-400 items-end custom'> */}
