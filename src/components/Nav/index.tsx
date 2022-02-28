@@ -13,23 +13,24 @@ import logo from './images/logo.svg';
 import logIn from './images/logIn.svg';
 
 // Navigation Bar
-export const Nav: React.FC<string[]> = (links) => {
+// export const Nav: React.FC<string[]> = (links) => {
+export const Nav: React.FC = () => {
   const [current, setCurrent] = useState('mail');
 
   const handleClick = (e: any) => {
     setCurrent(e.key);
   };
 
-  // // Configure the links the menu will display:
-  // const links: string[] = [
-  //   'Home',
-  //   'Explorer',
-  //   'Projects',
-  //   'Grants',
-  //   'Documentation',
-  //   'GitHub'
-  // ]
-  // // Refactor to require links to be passed to component?
+  // Configure the links the menu will display:
+  const links: string[] = [
+    'Home',
+    'Explorer',
+    'Projects',
+    'Grants',
+    'Documentation',
+    'GitHub'
+  ]
+  // Refactor to require links to be passed to component?
 
   return (
     // NOTES: Different ways to override AntD styles:
