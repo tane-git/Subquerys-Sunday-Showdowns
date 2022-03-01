@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react'
 import logo from './logo.svg'
 // If App.css is imported here, it can't override antd styles
@@ -12,8 +13,7 @@ const { Header, Content, Footer } = Layout
 import './App.css'
 
 // internal components
-import { Nav, RadioGroup } from './components' 
-
+import { Nav, RadioGroup, Button } from './components' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,7 +23,9 @@ function App() {
       <Nav links={['Home', 'About', 'Register']} />
       <Content >
         <RadioGroup />
-
+        <p>
+          <Button />
+        </p>
       </Content>
     </Layout>
   )
