@@ -38,10 +38,9 @@ type Props = {
 
 }
 
-export const Button: React.VFC<Props> = ({
+export const Button: React.FC<Props> = ({
   size = 'large',
   type = 'default',
-  // colour = 'gradient',
   colour,
   label,
   disabled = false,
@@ -56,8 +55,12 @@ export const Button: React.VFC<Props> = ({
       size={size}
       shape='round'
       disabled={disabled}
-      className={clsx(styles[colour], outlined && styles.outlined)}
       ghost = {ghost}
+      className={clsx(
+        styles[colour],
+        outlined && styles.outlined,
+        type === 'link' && styles.link,
+        )}
     >
       {label}
     </Button_antd>
