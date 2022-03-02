@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+ /* styles can be applied to antd classes here but that will become unorgranized */
+.ant-btn-link:hover > span {
+  text-decoration: underline;
+}
 
 /* this can override antd styles */
 .testGlobal {

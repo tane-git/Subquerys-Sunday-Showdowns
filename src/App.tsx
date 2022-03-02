@@ -1,23 +1,24 @@
 import React from 'react';
 import { useState } from 'react'
 import logo from './logo.svg'
-// If App.css is imported here, it can't override antd styles
-import './App.css'
 
-// antd
-// import 'antd/lib/style/themes/default.less';
-import 'antd/dist/antd.less'
-import 'antd/lib/style/themes/default.less';
-// import 'antd/dist/antd.css';
+import './App.less'
+
+// antd components
 import { Col, Divider, Layout, Row, Typography } from 'antd'
 const { Header, Content, Footer } = Layout 
 import { Button as Button_antd } from 'antd'
 
+// antd styles
+// import 'antd/lib/style/themes/default.less';
+// import 'antd/dist/antd.less'
+
 // App.css can override antd styles when imported below 
-// import './App.css'
+// import './App.less'
 
 // internal components
 import { Nav, RadioGroup, Button } from './components' 
+// import './AppTheme.less'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -64,7 +65,7 @@ function App() {
             <Button label='Button' size='large' type='text' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='large' type='link'/>
+            <Button label='Link-Button' size='large' type='link'/>
           </Col>
         </Row>
         <Row className='m-4'>

@@ -6,7 +6,7 @@ export const button = {
   // >>> text button
   // '@btn-text-hover-bg': sqTheme.Primary_Blue[0]
   // rgba value below is equivalent to above colour with opacity 0.1
-  '@btn-text-hover-bg': 'rgba(67, 136, 221, 0.1)'
+  // '@btn-text-hover-bg': 'rgba(67, 136, 221, 0.1)'
 }
 
 

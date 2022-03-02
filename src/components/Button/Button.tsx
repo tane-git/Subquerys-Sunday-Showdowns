@@ -50,12 +50,14 @@ export const Button: React.FC<Props> = ({
 }) => {
   return (
     <Button_antd
-      block={false}
+      // antd props
       type={type}
       size={size}
       shape='round'
       disabled={disabled}
       ghost = {ghost}
+
+      // applying sq styles
       className={clsx(
         styles[colour],
         outlined && styles.outlined,

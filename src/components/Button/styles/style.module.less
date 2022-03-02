@@ -1,7 +1,14 @@
-// how can I import a ts object of colour variables into less?
+// SUBQUERY THEME 
+@import '../../../theme/theme.less';
+
+// ANTD THEME
+@import '../../../../node_modules/antd/lib/style/themes/default.less';
+
+// Modifying theme
+@primary-color: @primary-pink-1;
 
 .gradient {
-  background: linear-gradient(96.26deg, #4388DD 13.8%, #FF4581 82.83%);;
+  background: linear-gradient(96.26deg, @primary-blue-1 13.8%, @primary-pink-1 82.83%);;
 }
 
 .outlined {
@@ -9,13 +16,17 @@
   border-color: #4388DD
 }
 
-// .link {
-//   &:hover {
-//     text-decoration: underline;
-//   }
-// }
-
-.link:hover {
+// Link Button Theme
+.link:hover > span {
   text-decoration: underline;
 }
 
+// this isn't working here, but it works in the ~/src/App.css file
+// .ant-btn-link > span {
+//   text-decoration: underline;
+// }
+
+
+// try overriding antd variables here...
+  // @btn-text-hover-bg: rgba(67, 136, 221, 0.1)
+  // @btn-text-hover-bg: rgb(244, 0, 0)
