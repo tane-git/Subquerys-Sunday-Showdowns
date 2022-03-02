@@ -1,10 +1,13 @@
-// export const theme: object = {
-//   '@layout-header-background': 'linear-gradient(293.04deg, rgba(255, 69, 129, .1) 4.09%, rgba(67, 136, 221, .1) 70.16%)'
-// }
+// Override Antd variables
 
-// import { header } from './header'
+import { base } from './base'
+import { component } from './component'
 import { header } from '../components/Nav/styles'
+import { button } from '../components/Button/styles'
 
 export const theme: object = {
-  ...header
+  ...base,
+  ...component,
+  ...header,
+  ...button
 }

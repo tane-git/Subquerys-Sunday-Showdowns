@@ -1,33 +1,65 @@
 // Copyright 2020-2021 OnFinality Limited authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+// Based on https://www.figma.com/file/sCAngiTf2mPOWPo9kcoEE7/SubQuery-Design-System?node-id=26%3A3
+
 import * as React from 'react';
+import clsx from 'clsx';
 
 // antd
 import { Button as Button_antd } from 'antd';
 
+// styles
+import styles from './styles/style.module.less';
+
 type Props = {
+  // antd props
+  block?: boolean;
+  danger?: boolean;
+  disabled?: boolean;
+  ghost?: boolean;
+  href?: string;
+  htmlType?: string;
+  icon?: React.ReactNode;
+  loading?: boolean | { delay?: number };
+  shape?: 'deafult' | 'circle' | 'round';
+  size?: 'large' | 'middle' | 'small';
+  target?: string;
+  type?: 'primary' | 'ghost' | 'dashed' | 'link' | 'text' | 'default'
+  onClick?: (event) => void;
+
+  // sq props
+  // colour?: 'primary' | 'neutral' | 'gradient';
+  colour?: 'gradient';
+  label?: string;
+  filled?: boolean;
+  outlined?: boolean;
+  // it looks like antd considers ghost to mean outlined...
 
 }
 
-// type Props = {
-//   type?: 'primary' | 'secondary' | 'link';
-//   size?: 'large' | 'medium' | 'small';
-//   colorScheme?: 'gradient' | 'standard' | 'neutral';
-//   label?: string;
-//   leftItem?: React.ReactNode;
-//   rightItem?: React.ReactNode;
-//   onClick?: () => void;
-//   href?: string;
-//   className?: string;
-//   disabled?: boolean;
-//   loading?: boolean;
-// } & React.AnchorHTMLAttributes<HTMLAnchorElement>;
-
 export const Button: React.VFC<Props> = ({
+  size = 'large',
+  type = 'default',
+  // colour = 'gradient',
+  colour,
+  label,
+  disabled = false,
+  // filled = true 
+  outlined,
+  ghost
 }) => {
   return (
-    // <Button_antd type='primary' className={styles.button} />
-    <Button_antd type='primary' shape='round' >Test</Button_antd>
+    <Button_antd
+      block={false}
+      type={type}
+      size={size}
+      shape='round'
+      disabled={disabled}
+      className={clsx(styles[colour], outlined && styles.outlined)}
+      ghost = {ghost}
+    >
+      {label}
+    </Button_antd>
   );
 };
