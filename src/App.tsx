@@ -50,7 +50,7 @@ function App() {
             <Button label='Button' type='primary' />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='primary' outlined />
+            <Button label='Button' type='primary' outlined={true} />
           </Col>
           <Col span={4}>
             <Button label='Button' type='default' />
