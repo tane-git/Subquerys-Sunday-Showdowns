@@ -1,3 +1,4 @@
+// This file is an example of how to modify AntD variables without using Less code.
 import { sqTheme } from '../../../theme/theme';
 
 export const button = {

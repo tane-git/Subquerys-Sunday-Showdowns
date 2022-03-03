@@ -8,7 +8,8 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
-        modifyVars: theme
+        // Currently modifying variables through less files, but the following is an alternative:
+        // modifyVars: theme
       }
     }
   },

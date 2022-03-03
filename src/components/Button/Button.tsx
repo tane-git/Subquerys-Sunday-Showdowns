@@ -59,6 +59,7 @@ export const Button: React.FC<Props> = ({
 
       // applying sq styles
       className={clsx(
+        'test',
         styles[colour],
         outlined && styles.outlined,
         type === 'link' && styles.link,
