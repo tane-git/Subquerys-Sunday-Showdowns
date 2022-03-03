@@ -10,6 +10,8 @@ import { Col, Divider, Layout, Row, Typography } from 'antd'
 const { Header, Content, Footer } = Layout 
 // import { Button as Button_antd } from 'antd'
 
+import { RightOutlined } from '@ant-design/icons';
+
 // INTERNAL COMPONENTS
 import { Nav, RadioGroup, Button } from './components' 
 
@@ -98,6 +100,46 @@ function App() {
           </Col>
           <Col span={4}>
             <Button size='small' label='Link-Button' type='link'/>
+          </Col>
+        </Row>
+        <Row className='m-4'>
+          <Col span={4}>
+            <p>Icons</p>
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' icon={<RightOutlined />} />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' outlined />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='default' />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='text' />
+          </Col>
+          <Col span={4}>
+            <Button label='Link-Button' type='link'/>
+          </Col>
+        </Row>
+        <Row className='m-4'>
+          <Col span={4}>
+            <p>Icons Right</p>
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' iconRight={<RightOutlined />} />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' outlined />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='default' />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='text' />
+          </Col>
+          <Col span={4}>
+            <Button label='Link-Button' type='link'/>
           </Col>
         </Row>
         <Divider />

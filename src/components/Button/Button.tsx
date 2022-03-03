@@ -37,16 +37,10 @@ type Props = {
   onClick?: (event) => void;
 
   // sq props
-  // colour?: 'primary' | 'neutral' | 'gradient';
-  // colour?: 'gradient';
   gradient?: boolean;
   label?: string;
   outlined?: boolean;
-  // it looks like antd considers ghost to mean outlined...
-
-  // should we do our own icons?
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  iconRight?: React.ReactNode;
 }
 
 export const Button: React.FC<Props> = ({
@@ -60,8 +54,7 @@ export const Button: React.FC<Props> = ({
   outlined = false,
   gradient = false,
   label,
-  leftIcon,
-  rightIcon
+  iconRight
 }) => {
   return (
     <Button_antd
@@ -70,6 +63,7 @@ export const Button: React.FC<Props> = ({
       size={size}
       shape='round'
       disabled={disabled}
+      icon={icon}
 
       className={cx(
         // >>> ADDING subquery styles
@@ -82,7 +76,7 @@ export const Button: React.FC<Props> = ({
         type === 'default' && styles.default
         )}
     >
-      {leftIcon}{label}{rightIcon}
+      {label}{iconRight}
     </Button_antd>
   );
 };
