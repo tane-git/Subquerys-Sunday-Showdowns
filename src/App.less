@@ -1,7 +1,7 @@
 /* TAILWIND */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
 // note: not sure why we are getting the warning above: 'Unknown at rule @tailwindless(unknownAtRules)'
 
 /* ANT-DESIGN STYLES */
@@ -12,3 +12,9 @@
 @import './theme';
 // components themes below, override the above, foundational theme
 @import './components/style.less';
+
+// not sure where to import tailwind without it overriding less stuff?
+/* TAILWIND */
+// @tailwind base;
+// @tailwind components;
+@tailwind utilities;

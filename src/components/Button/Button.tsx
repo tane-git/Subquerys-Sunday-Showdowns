@@ -4,13 +4,21 @@
 // Based on https://www.figma.com/file/sCAngiTf2mPOWPo9kcoEE7/SubQuery-Design-System?node-id=26%3A3
 
 import * as React from 'react';
-import clsx from 'clsx';
+// import clsx from 'clsx';
+import cx from "classnames";
 
 // antd
 import { Button as Button_antd } from 'antd';
+import { NativeButtonProps } from "antd/lib/button/button.d";
 
 // styles
 import styles from './styles/style.module.less';
+
+// export interface IProps extends NativeButtonProps {
+//   radius?: boolean;
+// }
+
+// not extending NativeButtonProps yet as it is easier to see all the props in one place to decide how we will use them...
 
 type Props = {
   // antd props
@@ -30,23 +38,30 @@ type Props = {
 
   // sq props
   // colour?: 'primary' | 'neutral' | 'gradient';
-  colour?: 'gradient';
+  // colour?: 'gradient';
+  gradient?: boolean;
   label?: string;
-  filled?: boolean;
   outlined?: boolean;
   // it looks like antd considers ghost to mean outlined...
 
+  // should we do our own icons?
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
 }
 
 export const Button: React.FC<Props> = ({
+  // >>> ANTD PROPS
+  disabled = false,
   size = 'large',
   type = 'default',
-  colour,
+  icon,
+
+  // >>> SQ PROPS
+  outlined = false,
+  gradient = false,
   label,
-  disabled = false,
-  // filled = true 
-  outlined,
-  ghost
+  leftIcon,
+  rightIcon
 }) => {
   return (
     <Button_antd
@@ -55,17 +70,19 @@ export const Button: React.FC<Props> = ({
       size={size}
       shape='round'
       disabled={disabled}
-      ghost = {ghost}
 
-      // applying sq styles
-      className={clsx(
-        'test',
-        styles[colour],
+      className={cx(
+        // >>> ADDING subquery styles
+        gradient && styles.gradient,
         outlined && styles.outlined,
+
+        // >>> MODIFYING existing antd styles
         type === 'link' && styles.link,
+        type === 'text' && styles.text,
+        type === 'default' && styles.default
         )}
     >
-      {label}
+      {leftIcon}{label}{rightIcon}
     </Button_antd>
   );
 };

@@ -17,9 +17,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Layout >
+    <Layout className='bg-transparent'>
       <Nav links={['Home', 'About', 'Register']} />
-      <Content className='m-4' >
+      <Content className='m-4 bg-transparent' >
         <Typography.Title> Standard Button </Typography.Title>
         <Row className='m-4'>
           <Col span={4}></Col>
@@ -33,10 +33,10 @@ function App() {
             <p>Neutral / Outlined</p>
           </Col>
           <Col span={4}>
-            <p>Ghost</p>
+            <p>Text</p>
           </Col>
           <Col span={4}>
-            <p>Text Link</p>
+            <p>Link</p>
           </Col>
         </Row>
         <Divider />
@@ -45,20 +45,19 @@ function App() {
             <p>Default - Large</p>
           </Col>
           <Col span={4}>
-            <Button label='Button' size='large' type='primary' />
+            <Button label='Button' type='primary' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='large' type='primary' ghost={true} />
-            {/* <Button label='Button' size='large' outlined={true} /> */}
+            <Button label='Button' type='primary' outlined />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='large' />
+            <Button label='Button' type='default' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='large' type='text' />
+            <Button label='Button' type='text' />
           </Col>
           <Col span={4}>
-            <Button label='Link-Button' size='large' type='link'/>
+            <Button label='Link-Button' type='link'/>
           </Col>
         </Row>
         <Row className='m-4'>
@@ -66,19 +65,19 @@ function App() {
             <p>Medium</p>
           </Col>
           <Col span={4}>
-            <Button label='Button' size='middle' type='primary' />
+            <Button size='middle' label='Button' type='primary' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='middle' type='primary' />
+            <Button size='middle' label='Button' type='primary' outlined />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='middle' />
+            <Button size='middle' label='Button' type='default' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='middle' />
+            <Button size='middle' label='Button' type='text' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='middle' />
+            <Button size='middle' label='Link-Button' type='link'/>
           </Col>
         </Row>
         <Row className='m-4'>
@@ -86,19 +85,19 @@ function App() {
             <p>Small</p>
           </Col>
           <Col span={4}>
-            <Button label='Button' size='small' type='primary' />
+            <Button size='small' label='Button' type='primary' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='small' type='primary' />
+            <Button size='small' label='Button' type='primary' outlined />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='small' />
+            <Button size='small' label='Button' type='default' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='small' />
+            <Button size='small' label='Button' type='text' />
           </Col>
           <Col span={4}>
-            <Button label='Button' size='small' />
+            <Button size='small' label='Link-Button' type='link'/>
           </Col>
         </Row>
         <Divider />
@@ -109,7 +108,8 @@ function App() {
             <p>Default</p>
           </Col>
           <Col span={4}>
-            <Button label='Button' colour='gradient' />
+            {/* <Button label='Button' colour='gradient' /> */}
+            <Button label='Button' gradient />
           </Col>
         </Row>
       </Content>
