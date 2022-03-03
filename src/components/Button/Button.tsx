@@ -13,37 +13,14 @@ import { NativeButtonProps } from "antd/lib/button/button.d";
 
 // styles
 import styles from './styles/style.module.less';
-
-// export interface IProps extends NativeButtonProps {
-//   radius?: boolean;
-// }
-
-// not extending NativeButtonProps yet as it is easier to see all the props in one place to decide how we will use them...
-
-type Props = {
-  // antd props
-  block?: boolean;
-  danger?: boolean;
-  disabled?: boolean;
-  ghost?: boolean;
-  href?: string;
-  htmlType?: string;
-  icon?: React.ReactNode;
-  loading?: boolean | { delay?: number };
-  shape?: 'deafult' | 'circle' | 'round';
-  size?: 'large' | 'middle' | 'small';
-  target?: string;
-  type?: 'primary' | 'ghost' | 'dashed' | 'link' | 'text' | 'default'
-  onClick?: (event) => void;
-
-  // sq props
+export interface IProps extends NativeButtonProps {
   gradient?: boolean;
   label?: string;
   outlined?: boolean;
   iconRight?: React.ReactNode;
 }
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<IProps> = ({
   // >>> ANTD PROPS
   disabled = false,
   size = 'large',
@@ -67,8 +44,8 @@ export const Button: React.FC<Props> = ({
 
       className={cx(
         // >>> ADDING subquery styles
-        gradient && styles.gradient,
-        outlined && styles.outlined,
+        {[styles.gradient]: gradient},
+        {[styles.outlined]: outlined},
 
         // >>> MODIFYING existing antd styles
         type === 'link' && styles.link,
@@ -79,4 +56,4 @@ export const Button: React.FC<Props> = ({
       {label}{iconRight}
     </Button_antd>
   );
-};
+}

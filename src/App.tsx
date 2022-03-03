@@ -110,16 +110,16 @@ function App() {
             <Button label='Button' type='primary' icon={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='primary' outlined />
+            <Button label='Button' type='primary' outlined icon={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='default' />
+            <Button label='Button' type='default' icon={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='text' />
+            <Button label='Button' type='text' icon={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Link-Button' type='link'/>
+            <Button label='Link-Button' type='link' icon={<RightOutlined />} />
           </Col>
         </Row>
         <Row className='m-4'>
@@ -130,16 +130,36 @@ function App() {
             <Button label='Button' type='primary' iconRight={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='primary' outlined />
+            <Button label='Button' type='primary' outlined iconRight={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='default' />
+            <Button label='Button' type='default' iconRight={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Button' type='text' />
+            <Button label='Button' type='text' iconRight={<RightOutlined />} />
           </Col>
           <Col span={4}>
-            <Button label='Link-Button' type='link'/>
+            <Button label='Link-Button' type='link' iconRight={<RightOutlined />} />
+          </Col>
+        </Row>
+        <Row className='m-4'>
+          <Col span={4}>
+            <p>Disabled</p>
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' disabled />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='primary' outlined disabled />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='default' disabled />
+          </Col>
+          <Col span={4}>
+            <Button label='Button' type='text' disabled />
+          </Col>
+          <Col span={4}>
+            <Button label='Link-Button' type='link' disabled />
           </Col>
         </Row>
         <Divider />

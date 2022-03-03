@@ -2,11 +2,14 @@
 @import '../../../../node_modules/antd/lib/style/themes/default.less';
 
 // >>> ANTD PROPS 
-.default {
-  &:hover {
-    color: @sq-text-color;
-    border-color: @btn-default-border;
-    background: @gray-2;
+// .default {
+:global {
+  .ant-btn-default {
+    &:hover {
+      color: @sq-text-color;
+      border-color: @btn-default-border;
+      background: @gray-2;
+    }
   }
 }
 
